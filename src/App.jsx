@@ -3,32 +3,55 @@ import './App.css'
 
 function App() {
   const [votos, setVotos] = useState(0)
+  const [votaciones, setVotaciones] = useState({
+    kuoli: 0,
+    mendezmolina: 0,
+    cumsillediez: 0,
+    millarmedel: 0
+  })
 
   const KuoLi = 'Kuo-li'
   const CumsilleDiez = 'Cumsille-Diez'
   const MillarMedel = 'Millar-Medel'
   const MendezMolina = 'Mendez-Molina'
 
-  let votaciones = {
-    kuoli: 0,
-    mendezmolina: 0,
-    cumsillediez: 0,
-    millarmedel: 0
-  }
-
   function vote() {
-    votaciones.kuoli += parseInt(document.getElementById(KuoLi).value)
-    votaciones.cumsillediez += parseInt(document.getElementById(CumsilleDiez).value)
-    votaciones.millarmedel += parseInt(document.getElementById(MillarMedel).value)
-    votaciones.mendezmolina += parseInt(document.getElementById(MendezMolina).value)    
-    setVotos(votos + 1)
-    console.log(votaciones)
-    console.log(votos);
     event.preventDefault()
+
+    let newObj = {...votaciones}
+
+    newObj.kuoli = parseInt(newObj.kuoli) + parseInt(document.getElementById(KuoLi).value)
+    newObj.mendezmolina = parseInt(newObj.mendezmolina) + parseInt(document.getElementById(MendezMolina).value)
+    newObj.cumsillediez = parseInt(newObj.cumsillediez) + parseInt(document.getElementById(CumsilleDiez).value)
+    newObj.millarmedel = parseInt(newObj.millarmedel) + parseInt(document.getElementById(MillarMedel).value)
+    
+    setVotaciones(newObj)
+    setVotos(votos + 1)
+
+    setTimeout(console.log(votaciones), 1000)
+    setTimeout(console.log(votos), 1000)
+  }   
+
+  function winner() {
+    event.preventDefault()
+
+    let nombreValorMayor = ''
+    let valorMayor = -Infinity
+
+    for (const clave in votaciones) {
+      if (votaciones[clave] > valorMayor) {
+        valorMayor = votaciones[clave];
+        nombreValorMayor = clave;
+      }
+    }
+    console.log(nombreValorMayor)
+    console.log(valorMayor);
+
+    let element = document.createElement('div') 
   }
 
   return (
-    <form id='vote__form'>
+    <form id='vote__form' className='vote__form'>
       <div className='wrapper'>
         <label>{`Familia ${KuoLi}`}</label>
         <input type="number" name={KuoLi} id={KuoLi} />
@@ -46,7 +69,8 @@ function App() {
         <input type="number" name={MillarMedel} id={MillarMedel} />
       </div>
       <button onClick={vote}>VOTAR!</button>
-      <button>Reset</button>
+      <button className='reset'>Reset</button>
+      <button onClick={winner}>Revelar Ganador</button>
       <p>{`Votos escrutados: ${votos}`}</p>
     </form>
   )

@@ -1,0 +1,32 @@
+.vote__form {
+    padding: 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
+    row-gap: 1rem;
+    justify-items: center;
+
+    & .wrapper > * {
+        padding: 0 2rem 0 2rem;
+    }
+
+    & input {
+        width: 1rem;
+        text-align: center;
+    }
+}
+
+button {
+    width: 40%;
+    height: 2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 1rem;
+    background-color: blue;
+    color: white;
+}
+
+.reset {
+    background-color: red;
+}
