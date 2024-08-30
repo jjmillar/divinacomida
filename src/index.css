@@ -1,4 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
 body {
-    width: 100svw;
-    height: 100svh;
+    margin: 0;
+    font-family: "SUSE", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }

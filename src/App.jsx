@@ -10,7 +10,7 @@ function App() {
     millarmedel: 0
   })
 
-  const KuoLi = 'Kuo-li'
+  const KuoLi = 'Kuo-Li'
   const CumsilleDiez = 'Cumsille-Diez'
   const MillarMedel = 'Millar-Medel'
   const MendezMolina = 'Mendez-Molina'
@@ -39,19 +39,24 @@ function App() {
     let valorMayor = -Infinity
 
     for (const clave in votaciones) {
+      if (votaciones[clave] === valorMayor) {
+        nombreValorMayor = nombreValorMayor + ' y ' + clave
+      }
       if (votaciones[clave] > valorMayor) {
-        valorMayor = votaciones[clave];
-        nombreValorMayor = clave;
+        valorMayor = votaciones[clave]
+        nombreValorMayor = clave
       }
     }
     console.log(nombreValorMayor)
     console.log(valorMayor);
 
-    let element = document.createElement('div') 
+    let element = document.getElementById('form__winner') 
+    element.textContent = nombreValorMayor
   }
 
   return (
     <form id='vote__form' className='vote__form'>
+      <label className='form__title'> Resultados Divina Comida</label>
       <div className='wrapper'>
         <label>{`Familia ${KuoLi}`}</label>
         <input type="number" name={KuoLi} id={KuoLi} />
@@ -69,9 +74,9 @@ function App() {
         <input type="number" name={MillarMedel} id={MillarMedel} />
       </div>
       <button onClick={vote}>VOTAR!</button>
-      <button className='reset'>Reset</button>
       <button onClick={winner}>Revelar Ganador</button>
       <p>{`Votos escrutados: ${votos}`}</p>
+      <p id='form__winner'></p>
     </form>
   )
 }
