@@ -51,7 +51,7 @@ function App() {
     console.log(valorMayor);
 
     let element = document.getElementById('form__winner') 
-    element.textContent = nombreValorMayor
+    element.textContent = 'Ganador: ' + nombreValorMayor
   }
 
   return (

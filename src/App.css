@@ -33,3 +33,7 @@ button {
     background-color: blue;
     color: white;
 }
+
+p {
+    font-size: 1.25rem;
+}
