@@ -9,7 +9,7 @@
     align-items: center;
 
     & .form__title {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     & .wrapper > * {
@@ -27,6 +27,7 @@ button {
     width: 50%;
     height: 4rem;
     font-weight: 600;
+    font-size: 1.25rem;
     border: none;
     border-radius: 1rem;
     background-color: blue;
