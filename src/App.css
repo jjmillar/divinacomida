@@ -1,9 +1,13 @@
 .vote__form {
-    height: 100svh;
+    height: 95svh;
+    width: 95svw;
+    background-color: var(--clr-form);
+    border-radius: 1rem;
+    box-shadow: 1px -1px 10px -1px rgba(0,0,0,0.62);
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     row-gap: 1rem;
     justify-items: center;
     align-items: center;
@@ -13,7 +17,7 @@
     }
 
     & .wrapper > * {
-        padding: 0 2rem 0 2rem;
+        padding: 0 1rem 0 1rem;
         font-size: 1.25rem;
     }
 
@@ -30,7 +34,7 @@ button {
     font-size: 1.25rem;
     border: none;
     border-radius: 1rem;
-    background-color: blue;
+    background-color: var(--clr-btn);
     color: white;
 }
 

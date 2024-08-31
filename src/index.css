@@ -1,11 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
 
+:root {
+    --clr-bg: #ffffff;
+    --clr-form: #cbf3f0;
+    --clr-btn: #2ec4b6;
+}
+
 body {
+    height: 100svh;
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     font-family: "SUSE", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
+    background-color: var(--clr-bg)
 }
 
 ::-webkit-scrollbar {

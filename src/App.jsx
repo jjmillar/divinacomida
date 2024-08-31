@@ -56,7 +56,7 @@ function App() {
 
   return (
     <form id='vote__form' className='vote__form'>
-      <label className='form__title'> Resultados Divina Comida</label>
+      <label className='form__title'> Votaciones Divina Comida</label>
       <div className='wrapper'>
         <label>{`Familia ${KuoLi}`}</label>
         <input type="number" name={KuoLi} id={KuoLi} />
