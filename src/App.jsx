@@ -27,9 +27,6 @@ function App() {
     
     setVotaciones(newObj)
     setVotos(votos + 1)
-
-    setTimeout(console.log(votaciones), 1000)
-    setTimeout(console.log(votos), 1000)
   }   
 
   function winner() {
@@ -47,11 +44,9 @@ function App() {
         nombreValorMayor = clave
       }
     }
-    console.log(nombreValorMayor)
-    console.log(valorMayor);
 
     let element = document.getElementById('form__winner') 
-    element.textContent = 'Ganador: ' + nombreValorMayor
+    element.textContent = 'Ganador: Familia ' + nombreValorMayor
   }
 
   return (
