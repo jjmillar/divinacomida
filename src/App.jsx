@@ -25,6 +25,11 @@ function App() {
     newObj.cumsillediez = parseInt(newObj.cumsillediez) + parseInt(document.getElementById(CumsilleDiez).value)
     newObj.millarmedel = parseInt(newObj.millarmedel) + parseInt(document.getElementById(MillarMedel).value)
     
+    document.getElementById(KuoLi).value = ''
+    document.getElementById(MendezMolina).value = ''
+    document.getElementById(CumsilleDiez).value = '' 
+    document.getElementById(MillarMedel).value = ''
+
     setVotaciones(newObj)
     setVotos(votos + 1)
   }   
